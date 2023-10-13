@@ -1,0 +1,16 @@
+xrandr --output DVI-D-0 --mode 1920x1080 --rate 144.00 &
+
+redshift -l 57.769451:12.268760 -t 5000k:4000k &
+
+nitrogen --restore &
+
+xset r rate 200 30 &
+
+setxkbmap -option caps:escape &
+
+while true; do
+        xsetroot -name " $(date '+%H:%M %a %d %b')"
+        sleep 2
+done &
+
+exec dwm
