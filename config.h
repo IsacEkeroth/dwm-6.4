@@ -49,13 +49,13 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 static const Layout layouts[] = {
 	/* symbol     arrange function */
 	{ "[]=",      tile },    /* first entry is default */
+	{ "HHH",      grid },
 	{ "[M]",      monocle },
 	{ "[@]",      spiral },
 	{ "[\\]",     dwindle },
 	{ "H[]",      deck },
 	{ "TTT",      bstack },
 	{ "===",      bstackhoriz },
-	{ "HHH",      grid },
 	{ "###",      nrowgrid },
 	{ "---",      horizgrid },
 	{ ":::",      gaplessgrid },
@@ -151,6 +151,8 @@ static const Key keys[] = {
 	{ 0,				XF86XK_AudioPlay, spawn,   {.v = medplaypausecmd } },
 	{ 0, 				XF86XK_AudioNext, spawn,   {.v = mednextcmd } },
 	{ 0, 				XF86XK_AudioPrev, spawn,   {.v = medprevcmd } },
+ 	{ MODKEY, 			XK_F1, spawn, 		SHCMD("setxkbmap se") },
+  	{ MODKEY, 			XK_F2, spawn, 		SHCMD("setxkbmap us") },
 };
 
 /* button definitions */
