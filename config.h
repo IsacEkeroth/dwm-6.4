@@ -138,6 +138,17 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
+	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+	{ 0, 				XF86XK_AudioMute, spawn,   {.v = mutecmd } },
+	{ 0, 				XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
+	{ 0, 				XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
+	{ 0,				XF86XK_AudioPlay, spawn,   {.v = medplaypausecmd } },
+	{ 0, 				XF86XK_AudioNext, spawn,   {.v = mednextcmd } },
+	{ 0, 				XF86XK_AudioPrev, spawn,   {.v = medprevcmd } },
+	{ MODKEY|ShiftMask,             XF86XK_AudioPlay, spawn,   {.v = restartpulseaudiocmd } },
+	{ MODKEY|ShiftMask,             XK_b,  spawn,              {.v = librewolfcmd } },
+ 	{ MODKEY, 			XK_F1, spawn, 		   SHCMD("setxkbmap se") },
+  	{ MODKEY, 			XK_F2, spawn, 		   SHCMD("setxkbmap us") },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
@@ -147,17 +158,6 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
-	{ 0, 				XF86XK_AudioMute, spawn, {.v = mutecmd } },
-	{ 0, 				XF86XK_AudioLowerVolume, spawn, {.v = voldowncmd } },
-	{ 0, 				XF86XK_AudioRaiseVolume, spawn, {.v = volupcmd } },
-	{ 0,				XF86XK_AudioPlay, spawn,   {.v = medplaypausecmd } },
-	{ 0, 				XF86XK_AudioNext, spawn,   {.v = mednextcmd } },
-	{ 0, 				XF86XK_AudioPrev, spawn,   {.v = medprevcmd } },
-	{ MODKEY|ShiftMask,             XF86XK_AudioPlay, spawn,   {.v = restartpulseaudiocmd } },
- 	{ MODKEY, 			XK_F1, spawn, 		SHCMD("setxkbmap se") },
-  	{ MODKEY, 			XK_F2, spawn, 		SHCMD("setxkbmap us") },
-	{ MODKEY|ShiftMask,             XK_b,  spawn,            {.v = librewolfcmd } },
 };
 
 /* button definitions */
